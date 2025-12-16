@@ -26,7 +26,7 @@ jobs:
         run: dotnet --version
       - name: build project
         working-directory: ./app
-        run: dotnet 
+        run: dotnet build
       - name: Docker build
         working-directory: ./app
         uses: docker/build-push-action@v3
