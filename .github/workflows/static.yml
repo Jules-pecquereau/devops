@@ -21,14 +21,14 @@ jobs:
         uses: actions/setup-dotnet@v5
         with:
           dotnet-version: '9.0.x'
+      
       - name: Show .NET version
         run: dotnet --version
       - name: build project
         working-directory: ./app
-        run: dotnet build
+        run: dotnet 
+      - name: Docker build
+        working-directory: ./app
+        uses: docker/build-push-action@v3
       - name: echo dans la concole pour dotnet
         run: echo build OK
-      - name: set up docker
-        working-directory: ./app
-        uses: docker/setup-buildx-action@v3
-        
