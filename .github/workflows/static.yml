@@ -27,8 +27,6 @@ jobs:
           dotnet-version: '9.0.x'
       - name: Show .NET version
         run: dotnet --version
-      - name: workspace 
-        working-directory: .
       - name: build project
         run: dotnet 
       - name: echo dans la concole pour dotnet
