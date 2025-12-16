@@ -15,12 +15,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: echo dans la concole 
+      - name: echo dans la concole pour checkout
         run: echo OK
-  console:
-    needs: deploy
-    name: Console Output
+  dotnet:
+    name: dotnet Output
     runs-on: ubuntu-latest
     steps:
-      - name: echo dans la concole 
-        run: echo OK        
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        needs: deploy
+        with:
+          dotnet-version: '9.0.x'
+      - name: Show .NET version
+        run: dotnet --version
+      - name: workspace 
+        run: workdir .
+      - name: build project
+        run: dotnet 
+      - name: echo dans la concole pour dotnet
+        run: echo build OK
