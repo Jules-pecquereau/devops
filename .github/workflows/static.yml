@@ -23,13 +23,12 @@ jobs:
     steps:
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
-      
         with:
           dotnet-version: '9.0.x'
       - name: Show .NET version
         run: dotnet --version
       - name: workspace 
-        run: workdir .
+        working-directory: .
       - name: build project
         run: dotnet 
       - name: echo dans la concole pour dotnet
