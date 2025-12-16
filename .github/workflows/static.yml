@@ -9,14 +9,6 @@ on:
 
 
 jobs:
-
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: echo dans la concole pour checkout
-        run: echo OK
   dotnet:
     name: dotnet Output
     runs-on: ubuntu-latest
