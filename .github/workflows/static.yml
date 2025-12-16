@@ -17,4 +17,9 @@ jobs:
         uses: actions/checkout@v4
       - name: echo dans la concole 
         run: echo OK
-        
+  console:
+    name: Console Output
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo dans la concole 
+        run: echo OK        
