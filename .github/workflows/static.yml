@@ -27,7 +27,9 @@ jobs:
           dotnet-version: '9.0.x'
       - name: Show .NET version
         run: dotnet --version
+      - name: répertoire de travail
+        working-directory: ./app
       - name: build project
-        run: dotnet 
+        run: dotnet build
       - name: echo dans la concole pour dotnet
         run: echo build OK
