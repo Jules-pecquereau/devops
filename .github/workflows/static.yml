@@ -28,7 +28,7 @@ jobs:
       - name: Show .NET version
         run: dotnet --version
       - name: répertoire de travail
-        run: workdir ./app
+        run: cd ./app
       - name: build project
         run: dotnet build
       - name: echo dans la concole pour dotnet
