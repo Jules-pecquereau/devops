@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
-        needs: deploy
+      
         with:
           dotnet-version: '9.0.x'
       - name: Show .NET version
