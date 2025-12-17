@@ -36,7 +36,7 @@ app.UseHttpsRedirection();
 app.MapGet("/", async (ApplicationDbContext db) =>
 {
     var forecasts = await db.Forecasts
-        .Select(f => new { f.Id, Ville = f.City, Temp = f.Temperature })
+        .Select(f => new { f.Id, Villes = f.City, Temp = f.Temperature })
         .ToListAsync()
     ;
 
