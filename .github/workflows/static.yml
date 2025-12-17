@@ -61,7 +61,7 @@ jobs:
     name: Github runner 
     runs-on: self-hosted
     needs: dockerhub
-    steps:
+    steps: 
       - name: Checkout
         uses: actions/checkout@v4
       - name: docker compose up
