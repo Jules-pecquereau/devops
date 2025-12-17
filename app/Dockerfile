@@ -11,6 +11,8 @@ RUN  apt-get update && apt install -y aspnetcore-runtime-9.0
 
 COPY /bin/Debug/net9.0/ . 
 
+RUN chmod +x ./demo
+
 CMD [ "./demo" ]
 
 EXPOSE 8080
