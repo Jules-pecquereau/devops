@@ -26,13 +26,6 @@ jobs:
       - name: build project
         working-directory: ./app
         run: dotnet build
-      - name: Docker build
-        uses: docker/build-push-action@v3
-        with:
-          context: ./app
-          file: ./app/Dockerfile
-          
-
       - name: Docker login
         uses: docker/login-action@v3
         with:
