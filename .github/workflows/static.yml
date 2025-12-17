@@ -36,4 +36,4 @@ jobs:
         with:
           context: ./app
           push: true
-          tags: julespecquereau/iia-devops:dotnet
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/iia-devops:dotnet
