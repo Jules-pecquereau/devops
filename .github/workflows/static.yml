@@ -32,9 +32,8 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Docker push build
-        working-directory: ./app
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: ./app
           push: true
           tags: julespecquereau/iia-devops:dotnet
