@@ -28,3 +28,6 @@ jobs:
         run: dotnet build
       - name: Docker build
         uses: docker/build-push-action@v3
+        with:
+        context: ./app
+        file: ./app/Dockerfile
