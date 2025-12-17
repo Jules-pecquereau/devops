@@ -65,5 +65,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: docker compose up
+        working-directory: ./app
         run: docker compose up -d --pull always --force-recreate --no-deps dotnet-app
-        
+
