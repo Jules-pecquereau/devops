@@ -29,5 +29,6 @@ jobs:
       - name: Docker build
         uses: docker/build-push-action@v3
         with:
-        context: ./app
-        file: ./app/Dockerfile
+          context: ./app
+          file: ./app/Dockerfile
+          
