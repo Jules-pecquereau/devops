@@ -9,6 +9,6 @@ RUN rm packages-microsoft-prod.deb
 
 RUN  apt-get update && apt install -y aspnetcore-runtime-9.0
 
-COPY /app/bin/Debug/net9.0/ . 
+COPY /bin/Debug/net9.0/ . 
 
 
