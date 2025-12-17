@@ -1,0 +1,40 @@
+name: demo-compose
+
+services:
+  mysql:
+    container_name: demo-mysql
+    image: mysql:8.0.40
+    environment:
+      MYSQL_ROOT_PASSWORD: Not24get
+    ports:
+      - "3306:3306"
+    
+    volumes:
+      - ./init-mysql.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - compose-network
+  postgres:
+    container_name: demo-postgres
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: Not24get
+      POSTGRES_DB: forecast
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init-postgres.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - compose-network
+  dotnet-app:
+    container_name: demo-dotnet-app
+    image: julespecquereau/iia-devops:dotnet
+    environment:
+      DbProvider: postgres
+      ConnectionStrings__DefaultConnection: Server=demo-postgres;Database=forecast;Username=postgres;Password=Not24get;
+    ports:
+      - "8083:8080"
+    networks:
+      - compose-network
+networks:
+  compose-network:
+    name: compose-network-name
