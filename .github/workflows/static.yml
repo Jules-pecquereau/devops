@@ -56,3 +56,14 @@ jobs:
           context: ./app
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/iia-devops:dotnet
+
+  github-runner:
+    name: Github runner 
+    runs-on: self-hosted
+    needs: dockerhub
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: docker compose up
+        run: docker compose up -d --pull always --force-recreate --no-deps dotnet-app
+        
